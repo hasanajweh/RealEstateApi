@@ -83,14 +83,19 @@ https://palestinerealestate.somee.com
 
 ### Available Endpoints
 
-- **Get All Properties:** `GET /api/Property/GetAllProperties`
-- **Get Property by ID:** `GET /api/Property/GetProperty/{id}`
-- **Add Property:** `POST /api/Property/AddProperty`
-- **Update Property:** `PUT /api/Property/UpdateProperty/{id}`
-- **Delete Property:** `DELETE /api/Property/DeleteProperty/{id}`
-- **Get Advertise Requests:** `GET /api/Property/Admin/GetAdvertiseRequests`
-- **Approve Request:** `PUT /api/Property/Admin/ApproveRequest/{id}`
-- **Reject Request:** `PUT /api/Property/Admin/RejectRequest/{id}`
+1. Public Endpoints (User Facing)
+GET /api/Property/GetAllProperties
+GET /api/Property/GetProperty/{id}
+POST /api/Property/SubmitAdvertiseRequest
+POST /api/Property/SubmitContactForm
+2. Admin Endpoints
+POST /api/Property/Admin/Login
+GET /api/Property/Admin/GetAllContacts
+GET /api/Property/Admin/GetContact/{id}
+GET /api/Property/Admin/GetAdvertiseRequests
+PUT /api/Property/Admin/ApproveRequest/{id}
+PUT /api/Property/Admin/RejectRequest/{id}
+DELETE /api/Property/Admin/DeleteProperty/{id}
 
 ## Deployment
 
