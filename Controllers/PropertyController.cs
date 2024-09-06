@@ -147,6 +147,18 @@ namespace PalsoftRealEstate.Controllers
 
             return Ok("Thank you for contacting us. We will get back to you shortly.");
         }
+        [HttpDelete("Admin/DeleteProperty/{id}")]
+        public IActionResult DeleteProperty(int id)
+        {
+            var property = _context.Properties.FirstOrDefault(p => p.PropertyId == id);
+            if (property == null)
+                return NotFound("Property not found");
+
+            _context.Properties.Remove(property);
+            _context.SaveChanges();
+
+            return Ok("Property deleted successfully.");
+        }
     }
 }
 
