@@ -83,19 +83,43 @@ https://palestinerealestate.somee.com
 
 ### Available Endpoints
 
-1. Public Endpoints (User Facing)
-GET /api/Property/GetAllProperties
-GET /api/Property/GetProperty/{id}
-POST /api/Property/SubmitAdvertiseRequest
-POST /api/Property/SubmitContactForm
-2. Admin Endpoints
-POST /api/Property/Admin/Login
-GET /api/Property/Admin/GetAllContacts
-GET /api/Property/Admin/GetContact/{id}
-GET /api/Property/Admin/GetAdvertiseRequests
-PUT /api/Property/Admin/ApproveRequest/{id}
-PUT /api/Property/Admin/RejectRequest/{id}
-DELETE /api/Property/Admin/DeleteProperty/{id}
+#### 1. Public Endpoints (User Facing)
+
+- **GET** `/api/Property/GetAllProperties`  
+  Retrieves a list of all approved properties.
+
+- **GET** `/api/Property/GetProperty/{id}`  
+  Retrieves a specific property by ID, only if it has been approved.
+
+- **POST** `/api/Property/SubmitAdvertiseRequest`  
+  Submits an advertisement request to be reviewed and approved by the admin.
+
+- **POST** `/api/Property/SubmitContactForm`  
+  Submits a contact form with the user's information and message.
+
+#### 2. Admin Endpoints
+
+- **POST** `/api/Property/Admin/Login`  
+  Admin login with hardcoded credentials.
+
+- **GET** `/api/Property/Admin/GetAllContacts`  
+  Retrieves all contact messages submitted through the contact form.
+
+- **GET** `/api/Property/Admin/GetContact/{id}`  
+  Retrieves a specific contact message by its ID.
+
+- **GET** `/api/Property/Admin/GetAdvertiseRequests`  
+  Retrieves all pending advertisement requests that need approval.
+
+- **PUT** `/api/Property/Admin/ApproveRequest/{id}`  
+  Approves an advertisement request by ID and converts it to an approved property.
+
+- **PUT** `/api/Property/Admin/RejectRequest/{id}`  
+  Rejects an advertisement request by ID.
+
+- **DELETE** `/api/Property/Admin/DeleteProperty/{id}`  
+  Deletes a specific property by its ID.
+
 
 ## Deployment
 
